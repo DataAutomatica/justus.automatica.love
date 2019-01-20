@@ -3,34 +3,43 @@ layout: default
 ---
 
 <section class='main-content'>
-    {% assign today_date = 'now' | date: '%s' %}
-    <h1 class="module title color-2 text-color-white">Upcoming meetings</h1>
-    {% for post in paginator.posts %}
-      {% assign post_date = post.date | date: '%s' | plus:86400 | date: '%s' %}
-      {% if today_date < post_date %}
-        {% include post_summary.html %}
-      {% endif %}
-    {% endfor %}
-    <h1 class="module title color-2 text-color-gray">Past meetings</h1>
-    {% for post in paginator.posts %}
-      {% assign post_date = post.date | date: '%s' | plus:86400 | date: '%s' %}
-      {% if today_date > post_date %}
-        {% include post_summary_past.html %}
-      {% endif %}
-    {% endfor %}
-
-    <div class='module pagination color-2'>
-        {% if paginator.previous_page %}
-            <a href='{{ site.url }}{{ paginator.previous_page_path }}' class='previous text-color-white'>Previous</a>
+    {% assign post_size = paginator.posts | size %}
+    {% if post_size > 0 %}
+      {% assign today_date = 'now' | date: '%s' %}
+      <h1 class="module title color-2 text-color-white">Upcoming meetings</h1>
+      {% for post in paginator.posts %}
+        {% assign post_date = post.date | date: '%s' | plus:86400 | date: '%s' %}
+        {% if today_date < post_date %}
+          {% include post_summary.html %}
         {% endif %}
-
-        <span class='page_number text-color-white'>
-            &mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;
-        </span>
-
-        {% if paginator.next_page %}
-            <a href='{{ site.url }}{{ paginator.next_page_path }}' class='next text-color-white'>Next</a>
+      {% endfor %}
+      <h1 class="module title color-2 text-color-gray">Past meetings</h1>
+      {% for post in paginator.posts %}
+        {% assign post_date = post.date | date: '%s' | plus:86400 | date: '%s' %}
+        {% if today_date > post_date %}
+          {% include post_summary_past.html %}
         {% endif %}
-    </div>
+      {% endfor %}
+
+      <div class='module pagination color-2'>
+          {% if paginator.previous_page %}
+              <a href='{{ site.url }}{{ paginator.previous_page_path }}' class='previous text-color-white'>Previous</a>
+          {% endif %}
+
+          <span class='page_number text-color-white'>
+              &mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;
+          </span>
+
+          {% if paginator.next_page %}
+              <a href='{{ site.url }}{{ paginator.next_page_path }}' class='next text-color-white'>Next</a>
+          {% endif %}
+      </div>
+    {% else %}
+      <h1 class="module title color-2 text-color-white">Upcoming meetings</h1>
+
+      <h1 class="module title color-2 text-color-gray">Past meetings</h1>
+      <h2 class="module title color-3 text-color-white">No events to show.</h2>
+
+    {% endif %}
 
 </section>
