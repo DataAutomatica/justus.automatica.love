@@ -1,4 +1,4 @@
-<a href='{{ fullUrl }}{{ post.url }}' title='{{ post.title }}'>
+<a class="post-summary" href='{{ fullUrl }}{{ post.url }}' title='{{ post.title }}'>
   <article class='module color-white'>
       <header>
           <div class="info-row">
@@ -7,6 +7,8 @@
           </div>
           <div class="info-row">
             <span class='text-color-highlight-alt'>{{ post.time}}</span>
+          </div>
+          <div class="info-row">
             <span class='text-color-highlight-alt'>{{ post.location}}</span>
           </div>
           <h2 class="text-color-black">
@@ -14,6 +16,13 @@
           </h2>
       </header>
 
-      <p class="text-color-black">{{ post.summary | strip_html }}</p>
+      <div class="row">
+        {% if post.image %}
+          <img src="assets/images/{{post.image}}" />
+        {% else %}
+          <img src="assets/images/black-placeholder.sq.jpg" />
+        {% endif %}
+        <p class="text-color-black">{{ post.summary | strip_html }}</p>
+      </div>
   </article>
 </a>

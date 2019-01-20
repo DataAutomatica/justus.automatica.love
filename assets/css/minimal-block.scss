@@ -159,6 +159,14 @@ nav {
 -------------------------------------------------------------------------*/
 
 
+.row {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .module {
     margin: 0.5rem;
     padding: 1.5rem;
@@ -169,6 +177,25 @@ nav {
         max-width: 100%;
     }
 
+}
+
+.post-summary {
+  img {
+    height: auto;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    width: 100%;
+
+    @media only screen and (min-width: $size-sm) {
+      margin-right: 40px;
+      margin-bottom: 0px;
+      width: 45%;
+    }
+  }
+
+  p {
+    align-self: flex-start;
+  }
 }
 
 .post-content,
@@ -253,7 +280,8 @@ article {
       width: 100%;
 
       span {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
         width: 100%;
       }
 
@@ -262,7 +290,7 @@ article {
 
       }
 
-      span:last-child {
+      span:nth-child(2) {
         text-align: right;
       }
     }

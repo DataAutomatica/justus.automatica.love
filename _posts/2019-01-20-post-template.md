@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "What is Machine Learning? (Example)"
+title:  "What are Cats? (Example)"
 date:   2019-01-20
 categories: [workshop]
-summary: "This meeting is about machine learning! Come learn about machine learning and its implications in policing, education, and housing. We'll cover some reason news stories and do a hands on exercise that will demonstrate algorithmic bias with machine learning."
+summary: "This meeting is about cats! Come learn about cats and their implications in policing, education, and housing. We'll cover some reason news stories and do a hands on exercise that will demonstrate algorithmic bias with cats."
 location: "Bluestockings Bookstore, 172 Allen St, Manhattan"
 time: "7pm"
+image: 'cat-white-jumping.jpg'
 published: false
 ---
 
