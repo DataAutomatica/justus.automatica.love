@@ -1,0 +1,25 @@
+@import '_variables';
+
+.text-color-black {
+  color: $brand-black;
+}
+
+.text-color-gray {
+  color: $brand-gray;
+}
+
+.text-color-white {
+  color: $brand-white;
+}
+
+.text-color-subdued {
+  color: $brand-subdued-color;
+}
+
+.text-color-highlight {
+  color: $brand-highlight-color;
+}
+
+.text-color-highlight-alt {
+  color: $brand-highlight-alt-color;
+}

@@ -1,0 +1,19 @@
+<a href='{{ fullUrl }}{{ post.url }}' title='{{ post.title }}'>
+  <article class='module color-white'>
+      <header>
+          <div class="info-row">
+            <span class='date text-color-highlight-alt'>{{ post.date | date: '%m/%d/%Y' }}</span>
+            <span class='categories text-color-subdued'>{{ post.categories | array_to_sentence_string }}</span>
+          </div>
+          <div class="info-row">
+            <span class='text-color-highlight-alt'>{{ post.time}}</span>
+            <span class='text-color-highlight-alt'>{{ post.location}}</span>
+          </div>
+          <h2 class="text-color-black">
+                  {{ post.title }}
+          </h2>
+      </header>
+
+      <p class="text-color-black">{{ post.summary | strip_html }}</p>
+  </article>
+</a>
