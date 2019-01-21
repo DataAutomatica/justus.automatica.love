@@ -8,7 +8,7 @@ layout: default
       {% assign today_date = 'now' | date: '%s' %}
       <h1 class="module title color-2 text-color-white">Upcoming meetings</h1>
       {% for post in paginator.posts %}
-        {% assign post_date = post.date | date: '%s' | plus:86400 | date: '%s' %}
+        {% assign post_date = post.date | date: '%s' | plus:104400 | date: '%s' %}
         {% if today_date < post_date %}
           {% include post_summary.html %}
         {% endif %}
@@ -16,7 +16,7 @@ layout: default
       <h1 class="module title color-2 text-color-gray">Past meetings</h1>
       {% for post in paginator.posts %}
         {% assign post_date = post.date | date: '%s' | plus:104400 | date: '%s' %}
-        {% if post_date > today_date %}
+        {% if post_date < today_date %}
           {% include post_summary_past.html %}
         {% endif %}
       {% endfor %}
