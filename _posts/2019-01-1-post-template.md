@@ -7,7 +7,7 @@ summary: "This meeting is about cats! Come learn about cats and their implicatio
 location: "Bluestockings Bookstore, 172 Allen St, Manhattan"
 time: "7pm"
 image: 'cat-white-jumping.jpg'
-published: false
+published: true
 ---
 
 ### Section title
